@@ -1,18 +1,36 @@
 ﻿@page "/card"
 @attribute [StreamRendering(true)]
 
+@inject ILogger<CardExample> logger
+
+@using SomeBlazorApp.Components.Elements
+
 <h3>CardExample</h3>
 
 <div>@Something</div>
 
 <FluentCard>
-	<FluentSwitch Label="Some control" />
+	<EditForm Model="@Model" OnSubmit="@Submit">
+		<div style="flex flex-row">
+			<FormElement>
+				<FluentSwitch Label="Some control" @bind-Value="@Model!.Selected" />
+			</FormElement>
 
-	<FluentTextField Label="Some other control" />
+			<FormElement>
+				<FluentTextField Label="Some other control" @bind-Value="@Model!.Name" />
+			</FormElement>
 
-	<FluentSelect TOption="int" Label="Select control">
-		<FluentOption Value="1">1</FluentOption>
-		<FluentOption Value="2">2</FluentOption>
-		<FluentOption Value="3">3</FluentOption>
-	</FluentSelect>
+			<FormElement>
+				<FluentSelect TOption="int" Label="Select control" @bind-Value="@Model!.Order">
+					<FluentOption Value="1">1</FluentOption>
+					<FluentOption Value="2">2</FluentOption>
+					<FluentOption Value="3">3</FluentOption>
+				</FluentSelect>
+			</FormElement>
+			
+			<FluentButton>
+				Submit
+			</FluentButton>
+		</div>
+	</EditForm>
 </FluentCard>

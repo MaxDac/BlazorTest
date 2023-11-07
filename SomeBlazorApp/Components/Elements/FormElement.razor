@@ -1,0 +1,8 @@
+﻿<div style="margin-top: 1rem; margin-bottom: 1rem;">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public required RenderFragment ChildContent { get; set; }
+}
