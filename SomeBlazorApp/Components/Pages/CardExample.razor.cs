@@ -1,5 +1,4 @@
-﻿
-namespace SomeBlazorApp.Components.Pages;
+﻿namespace SomeBlazorApp.Components.Pages;
 
 public partial class CardExample
 {
