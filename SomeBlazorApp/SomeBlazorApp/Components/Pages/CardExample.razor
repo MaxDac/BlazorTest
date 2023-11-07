@@ -1,0 +1,18 @@
+﻿@page "/card"
+@attribute [StreamRendering(true)]
+
+<h3>CardExample</h3>
+
+<div>@Something</div>
+
+<FluentCard>
+	<FluentSwitch Label="Some control" />
+
+	<FluentTextField Label="Some other control" />
+
+	<FluentSelect TOption="int" Label="Select control">
+		<FluentOption Value="1">1</FluentOption>
+		<FluentOption Value="2">2</FluentOption>
+		<FluentOption Value="3">3</FluentOption>
+	</FluentSelect>
+</FluentCard>
